@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,eAAe,CAAA;EACX,gBAAgB,EAAE,OAAiB;EACnC,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "MenuContainer.scss"
+    ],
+    "names": [],
+    "file": "MenuContainer.css"
+}

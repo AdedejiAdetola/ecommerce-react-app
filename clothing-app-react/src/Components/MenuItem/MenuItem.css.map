@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,gBAAgB,EAAE,OAAiB;EACnC,OAAO,EAAC,IAAI;CACf",
+    "sources": [
+        "MenuItem.scss"
+    ],
+    "names": [],
+    "file": "MenuItem.css"
+}
