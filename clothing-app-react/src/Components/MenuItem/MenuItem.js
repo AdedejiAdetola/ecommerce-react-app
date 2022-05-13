@@ -1,9 +1,14 @@
 import MenuContent from '../MenuContent/MenuContent';
 import './MenuItem.scss';
-const MenuItem = ({ title, imageUrl }) => {
+const MenuItem = ({ title, imageUrl, size }) => {
     return ( 
-        <div className='menu-item'>
-            <MenuContent title={ title } imageUrl={ imageUrl }/>
+        <div className={`menu-item ${size}`}>
+            <div className='background-image' 
+                style={{
+                    backgroundImage: `url(${imageUrl})`
+                }}
+            />
+            <MenuContent title={ title } size= { size }/>
         </div>
      );
 }

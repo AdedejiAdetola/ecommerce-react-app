@@ -8,7 +8,7 @@ const MenuContainer = () => {
         <div className='menu-container'>
             {data.map(oneData => {
                 return (
-                    <MenuItem key={oneData.id} imageUrl={oneData.imageUrl} title={oneData.title}/>
+                    <MenuItem key={oneData.id} imageUrl={oneData.imageUrl} title={oneData.title} size={oneData.size}/>
                 )
             })}
         </div>
