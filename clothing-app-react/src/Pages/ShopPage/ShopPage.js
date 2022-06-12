@@ -14,7 +14,7 @@ const ShopPage = () => {
                             <div>
                                 <h1>{item.title}</h1>
                                 <p>{item.items.map(one => (
-                                    <div key={one.id}>{one.name}</div>
+                                    <div key={one.id}>{one.id} {one.name}</div>
                                 ))}</p>
                             </div>
                         ))
