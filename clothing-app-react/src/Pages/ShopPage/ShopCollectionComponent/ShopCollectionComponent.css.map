@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAA;EACD,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,GAAG;CACb",
+    "sources": [
+        "ShopCollectionComponent.scss"
+    ],
+    "names": [],
+    "file": "ShopCollectionComponent.css"
+}

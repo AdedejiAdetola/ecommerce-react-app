@@ -1,3 +1,4 @@
+import ShopCollection from "./ShopCollectionComponent/ShopCollectionComponent";
 import SHOP_DATA from "./ShopData";
 
 const ShopPage = () => {
@@ -5,18 +6,14 @@ const ShopPage = () => {
         collection: SHOP_DATA
     };
     return ( 
-        <div style={{color: 'red'}}>
+        <div>
             <p>Shop Page</p>
             <br/>
+            
             <div>
                 {
-                        data.collection.map(item => (
-                            <div>
-                                <h1>{item.title}</h1>
-                                <p>{item.items.map(one => (
-                                    <div key={one.id}>{one.id} {one.name}</div>
-                                ))}</p>
-                            </div>
+                        data.collection.map(({ id, ...otherProps}) => (
+                            <ShopCollection key={id} { ...otherProps }/>
                         ))
                 }
             </div>
