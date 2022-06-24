@@ -1,1 +1,24 @@
-/* No CSS *//*# sourceMappingURL=ShopItem.css.map */
+.shopItem {
+  width: 300px;
+}
+
+.shopitem-image {
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.shopitem-image p {
+  display: none;
+}
+
+.shopitem-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=ShopItem.css.map */

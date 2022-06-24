@@ -1,0 +1,24 @@
+.shopItem{
+    width: 300px;
+    //border: 2px solid blue;
+}
+
+.shopitem-image{
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    p{
+        //width: 100%;
+        //height: 100%;
+        //border: 2px solid red;
+        display: none;
+    }
+}
+
+
+.shopitem-footer{
+    display: flex;
+    justify-content: space-between;
+}

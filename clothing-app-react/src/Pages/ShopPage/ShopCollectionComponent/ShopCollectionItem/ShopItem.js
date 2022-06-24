@@ -1,12 +1,15 @@
-const ShopItem = ({ id, name, imageUrl, price }) => {
+import './ShopItem.scss';
+
+const ShopItem = ({ name, imageUrl, price }) => {
     return ( 
-        <div>
+        <div className='shopItem'>
             <div
-            className="shopitem-mage"
+            className="shopitem-image"
             style={{
                 backgroundImage: `url(${imageUrl})`
-            }}
-            />
+            }}>
+                <p>Add to cart</p>
+            </div>
 
             <div className="shopitem-footer">
                 <span className="name">{ name } </span>
