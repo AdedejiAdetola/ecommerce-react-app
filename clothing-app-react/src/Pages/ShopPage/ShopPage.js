@@ -7,9 +7,6 @@ const ShopPage = () => {
     };
     return ( 
         <div>
-            <p>Shop Page</p>
-            <br/>
-            
             <div>
                 {
                         data.collection.map(({ id, ...otherProps}) => (

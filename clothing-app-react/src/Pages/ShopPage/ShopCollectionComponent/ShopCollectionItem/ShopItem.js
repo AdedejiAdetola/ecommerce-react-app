@@ -8,7 +8,9 @@ const ShopItem = ({ name, imageUrl, price }) => {
             style={{
                 backgroundImage: `url(${imageUrl})`
             }}>
-                <p>Add to cart</p>
+                <div className='cart-overlay'>
+                    <button className='btn'>ADD TO CART</button>
+                </div>
             </div>
 
             <div className="shopitem-footer">
