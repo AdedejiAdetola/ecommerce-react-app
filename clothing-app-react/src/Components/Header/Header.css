@@ -1,0 +1,25 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 30px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.option {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}
+
+.option:hover {
+  color: blue;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+}
+/*# sourceMappingURL=Header.css.map */

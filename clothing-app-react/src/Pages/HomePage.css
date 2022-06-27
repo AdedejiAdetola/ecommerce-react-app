@@ -1,5 +1,8 @@
-.homepage {
+body {
   background-color: #efcf6f;
+}
+
+.homepage {
   color: white;
   height: 100vh;
   display: -webkit-box;
