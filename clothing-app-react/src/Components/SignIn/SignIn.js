@@ -16,11 +16,10 @@ const SignIn = () => {
     }
 
     const handleChange = e => {
-        e.preventDefault();
 
-        //const [name, value] = e.target;
-
-        //setState({[name]: value})
+        // const [name, value] = e.target;
+        // setState({[name]: value})
+        
         setState({[e.target.name]: e.target.value})
     }
 
