@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,cAAc,CAAA;EACV,gBAAgB,EAAE,IAAI;CACzB",
+    "mappings": "AAAA,AAAA,cAAc,CAAA;EACV,gBAAgB,EAAE,IAAI;EACtB,OAAO,EAAE,IAAI;CAChB",
     "sources": [
         "SignInSignUp.scss"
     ],
