@@ -3,6 +3,8 @@ import { useState } from 'react';
 import FormInput from '../FormInput/FormInput';
 import CustomButton from '../CustomButton/CustomButton';
 
+import { signInWithGoogle } from '../../Firebase/Firebase';
+
 const SignIn = () => {
     
     // const [state, setState] = useState({
@@ -59,7 +61,8 @@ const SignIn = () => {
                 />
 
                 <CustomButton type='submit'> Sign In </CustomButton>
-                
+                <br/> <br/>
+                <CustomButton onClick={ signInWithGoogle }> Sign in with Google</CustomButton>
             </form>
         </div>
      );
