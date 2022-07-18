@@ -4,7 +4,7 @@ import HomePage from './Pages/HomePage';
 import ShopPage from './Pages/ShopPage/ShopPage';
 import SignInSignUp from './Pages/SignInSignUp/SignInSignUp';
 import Header from './Components/Header/Header';
-import { auth } from './Firebase/Firebase';
+import { auth, createUserProfileDocument } from './Firebase/Firebase';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -12,10 +12,9 @@ function App() {
 
   //useEffect in place of componentdidmount and componentwillunmount
   useEffect(() => {
-      const unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      setCurrentUser(user);
-      console.log(user);
-      //console.log('current user',currentUser);
+      const unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+        createUserProfileDocument(user)
+        //console.log('current user',currentUser);
     });
     return() => {
       unsubscribeFromAuth();
