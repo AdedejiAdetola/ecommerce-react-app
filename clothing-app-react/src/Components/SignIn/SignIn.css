@@ -1,5 +1,5 @@
 .signin {
-  width: 30vw;
+  width: 450px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,6 +10,15 @@
 }
 
 .title {
-  margin-bottom: 20px;
+  margin-bottom: 10px 0;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=SignIn.css.map */
