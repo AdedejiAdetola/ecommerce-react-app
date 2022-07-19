@@ -12,15 +12,32 @@ function App() {
 
   //useEffect in place of componentdidmount and componentwillunmount
   useEffect(() => {
-      const unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
-        createUserProfileDocument(user)
-        //console.log('current user',currentUser);
+    const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth){
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot(snapShot => {
+          setCurrentUser({
+            'id': snapShot.id,
+            ...snapShot.data()
+          })
+
+          //console.log(currentUser)
+        })
+      } else {
+        setCurrentUser(userAuth);
+      }
+
     });
+
+    
     return() => {
       unsubscribeFromAuth();
     }
+
   },[])
   return (
+    
     <Router>
          <div>
            {/* Current user props passed in to determine sign in or sign out */}
@@ -39,9 +56,7 @@ function App() {
               </Route>
            </Switch>
         </div>
-    </Router>
-
-   
+    </Router>   
   );
 }
 
