@@ -3,7 +3,7 @@ import { useState } from 'react';
 import FormInput from '../FormInput/FormInput';
 import CustomButton from '../CustomButton/CustomButton';
 
-import { signInWithGoogle } from '../../Firebase/Firebase';
+import { auth, signInWithGoogle } from '../../Firebase/Firebase';
 
 const SignIn = () => {
     
@@ -15,11 +15,17 @@ const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
 
-        setEmail('');
-        setPassword('');
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+            setEmail('');
+            setPassword('');
+        } catch (error) {
+            console.error(error)
+        }
+        
         // setState({
         //     'email':'',
         //     'password':''

@@ -5,59 +5,97 @@ import ShopPage from './Pages/ShopPage/ShopPage';
 import SignInSignUp from './Pages/SignInSignUp/SignInSignUp';
 import Header from './Components/Header/Header';
 import { auth, createUserProfileDocument } from './Firebase/Firebase';
-import { useState, useEffect } from 'react';
+import React from 'react';
 
-function App() {
-  const [currentUser, setCurrentUser] = useState(null);
+// functional component gives same result as class component below
 
-  //useEffect in place of componentdidmount and componentwillunmount
-  useEffect(() => {
-    const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-      if (userAuth){
+
+
+
+// function App() {
+//   const [currentUser, setCurrentUser] = useState(null);
+
+//   //useEffect in place of componentdidmount and componentwillunmount
+//   useEffect(() => {
+//     const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+//       if (userAuth){
+//         const userRef = await createUserProfileDocument(userAuth);
+//         userRef.onSnapshot(snapShot => {
+          
+//           setCurrentUser({
+//             'id': snapShot.id,
+//             ...snapShot.data()
+//           })
+//           console.log('.............add.........')
+//           console.log(snapShot.data())
+//         })
+//       }else{
+//         setCurrentUser(userAuth);
+//         console.log('here')
+//       }
+//     });
+    
+//     return() => unsubscribeFromAuth();
+//   }, [])
+
+class App extends React.Component{
+  constructor(){
+    super();
+
+    this.state = {
+      currentUser: null
+    };
+  }
+
+  unsubscribeFromAuth = null;
+  
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot(snapShot => {
-          setCurrentUser({
-            'id': snapShot.id,
-            ...snapShot.data()
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            }
           })
-
-          //console.log(currentUser)
-        })
-      } else {
-        setCurrentUser(userAuth);
+          //console.log(this.state)
+        });
       }
 
+      this.setState({ currentUser: userAuth})
     });
-
+  }
+  
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
+  }
+  render(){
+    return (
     
-    return() => {
-      unsubscribeFromAuth();
-    }
+      <Router>
+          <div>
+            {/* Current user props passed in to determine sign in or sign out */}
+            <Header currentUser={ this.state.currentUser }/>
+            <Switch>
+                <Route exact path="/">
+                  <HomePage/>
+                </Route>
 
-  },[])
-  return (
-    
-    <Router>
-         <div>
-           {/* Current user props passed in to determine sign in or sign out */}
-           <Header currentUser={ currentUser }/>
-           <Switch>
-              <Route exact path="/">
-                <HomePage/>
-              </Route>
+                <Route exact path="/shop">
+                  <ShopPage/>
+                </Route>
 
-              <Route exact path="/shop">
-                <ShopPage/>
-              </Route>
-
-              <Route exact path='/signin'>
-                <SignInSignUp />
-              </Route>
-           </Switch>
-        </div>
-    </Router>   
-  );
+                <Route exact path='/signin'>
+                  <SignInSignUp />
+                </Route>
+            </Switch>
+          </div>
+      </Router>   
+    );
+  }
 }
 
 export default App;

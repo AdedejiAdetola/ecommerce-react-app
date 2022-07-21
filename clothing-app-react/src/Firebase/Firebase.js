@@ -1,6 +1,6 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
-import 'firebase/compat/auth';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
 
 const config = {
     apiKey: "AIzaSyBBTb2gah6onBScRrHMECXyptAp4vPr5w0",
@@ -53,6 +53,8 @@ const config = {
       } catch (error) {
         console.log('error creating user', error.message);
       }
+    } else {
+      console.log('woo!')
     }
 
     return userRef;
