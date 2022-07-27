@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AACA,AAAA,KAAK,CAAA;EACD,UAAU,EAAE,IAAI;EAChB,KAAK,EAAE,GAAG;EAEV,OAAO,EAAE,SAAS;CAKrB;;AATD,AAMI,KANC,CAMD,EAAE,CAAA;EACE,aAAa,EAAE,IAAI;CACtB;;AAGL,AAAA,SAAS,CAAA;EACL,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,SAAS,EAAE,IAAI;CAClB",
-    "sources": [
-        "ShopCollectionComponent.scss"
-    ],
-    "names": [],
-    "file": "ShopCollectionComponent.css"
-}
+{"version":3,"sources":["ShopCollectionComponent.scss","ShopCollectionComponent.css"],"names":[],"mappings":"AACA;EACI,gBAAA;EACA,UAAA;EAEA,kBAAA;ACDJ;ADGI;EACI,mBAAA;ACDR;;ADKA;EACI,aAAA;EACA,8BAAA;EACA,eAAA;ACFJ","file":"ShopCollectionComponent.css"}

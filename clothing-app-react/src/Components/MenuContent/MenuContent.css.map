@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,aAAa,CAAC;EACV,gBAAgB,EAAE,IAAI;EACtB,MAAM,EAAE,eAAe;EACvB,aAAa,EAAE,IAAI;EACnB,OAAO,EAAE,GAAG;EACZ,KAAK,EAAC,IAAI;EACV,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,MAAM;EAClB,QAAQ,EAAE,QAAQ;CAIrB;;AAZD,AASI,aATS,AASR,MAAM,CAAA;EACH,OAAO,EAAC,GAAG;CACd",
-    "sources": [
-        "MenuContent.scss"
-    ],
-    "names": [],
-    "file": "MenuContent.css"
-}
+{"version":3,"sources":["MenuContent.scss","MenuContent.css"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,YAAA;EACA,WAAA;EACA,aAAA;EACA,kBAAA;EACA,kBAAA;ACCJ;ADAI;EACI,YAAA;ACER","file":"MenuContent.css"}

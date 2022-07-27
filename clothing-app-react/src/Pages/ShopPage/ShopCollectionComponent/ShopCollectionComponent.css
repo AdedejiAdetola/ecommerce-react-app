@@ -3,19 +3,12 @@
   color: red;
   padding: 30px 60px;
 }
-
 .shop h1 {
   margin-bottom: 30px;
 }
 
 .shopFlex {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-/*# sourceMappingURL=ShopCollectionComponent.css.map */
+  justify-content: space-between;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=ShopCollectionComponent.css.map */
