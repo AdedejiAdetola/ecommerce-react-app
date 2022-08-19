@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import './Header.scss';
 import { auth } from '../../Firebase/Firebase';
 import { connect } from 'react-redux';
+import CartIcon from '../Cart/CartIcon';
+import CartDropdown from '../CartDropdown/CartDropdown';
 
 const Header = ( {currentUser} ) => {
     return ( 
@@ -26,7 +28,9 @@ const Header = ( {currentUser} ) => {
                     :
                     <Link className='option' to='/signin'> SIGN IN</Link>
                 }
+                <CartIcon />
             </div>
+            <CartDropdown />
         </div>
      );
 };
