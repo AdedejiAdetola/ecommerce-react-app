@@ -1,6 +1,9 @@
 import './ShopItem.scss';
+import { connect } from 'react-redux';
+import { addItem } from '../../../../redux/cart/cart.action';
 
-const ShopItem = ({ name, imageUrl, price }) => {
+const ShopItem = ({ item, addItem }) => {
+    const { name, price, imageUrl } = item;
     return ( 
         <div className='shopItem'>
             <div
@@ -9,7 +12,7 @@ const ShopItem = ({ name, imageUrl, price }) => {
                 backgroundImage: `url(${imageUrl})`
             }}>
                 <div className='cart-overlay'>
-                    <button className='btn'>ADD TO CART</button>
+                    <button onClick={() => addItem(item)} className='btn'>ADD TO CART</button>
                 </div>
             </div>
 
@@ -22,4 +25,10 @@ const ShopItem = ({ name, imageUrl, price }) => {
      );
 }
  
-export default ShopItem;
+const mapDispatchToProps = dispatch => ({
+    addItem: item => dispatch(addItem(item))
+})
+export default connect(
+    null,
+    mapDispatchToProps
+)(ShopItem);

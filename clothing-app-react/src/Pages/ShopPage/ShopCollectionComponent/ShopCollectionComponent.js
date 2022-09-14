@@ -7,8 +7,8 @@ const ShopCollection = ( { title, items } ) => {
             <h1>{title.toUpperCase()}</h1>
             <div className='shopFlex'>{items
                 .filter(item => item.id <= 4)
-                .map(({ id, ...otherProps}) => (
-                    <ShopItem key={id} {...otherProps}/>
+                .map(item =>  (
+                    <ShopItem key={item.id} item={item}/>
                 ))}
             </div>
         </div>
