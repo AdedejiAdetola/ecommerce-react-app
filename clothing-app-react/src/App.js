@@ -9,7 +9,8 @@ import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/UserActions';
 import React from 'react';
 import { createStructuredSelector } from 'reselect';
-import { selectCurrentUser } from './redux/user/user.selectors'
+import { selectCurrentUser } from './redux/user/user.selectors';
+import CheckoutPage from './Pages/CheckoutPage/CheckoutPage';
 
 // functional component gives same result as class component below
 
@@ -83,6 +84,10 @@ class App extends React.Component{
                 <Route exact path="/shop">
                   <ShopPage/>
                 </Route>
+
+                <Route exact path="/checkout">
+                  <CheckoutPage/>
+                </Route>                
 
                 <Route
                  exact 
