@@ -8,6 +8,8 @@ import { auth, createUserProfileDocument } from './Firebase/Firebase';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user/UserActions';
 import React from 'react';
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from './redux/user/user.selectors'
 
 // functional component gives same result as class component below
 
@@ -98,8 +100,8 @@ class App extends React.Component{
   }
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 })
 
 const mapDispatchToProps = dispatch => ({
