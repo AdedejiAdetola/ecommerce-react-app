@@ -6,7 +6,7 @@ const ShopCollection = ( { title, items } ) => {
         <div className="shop">
             <h1>{title.toUpperCase()}</h1>
             <div className='shopFlex'>{items
-                .slice(0,4)
+                // .slice(0,4)
                 .map(item =>  (
                     <ShopItem key={item.id} item={item}/>
                 ))}

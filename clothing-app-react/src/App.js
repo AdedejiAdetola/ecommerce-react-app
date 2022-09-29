@@ -77,9 +77,7 @@ class App extends React.Component{
             {/* Current user props passed in to determine sign in or sign out */}
             <Header/>
             <Switch>
-                <Route exact path="/">
-                  <HomePage/>
-                </Route>
+                
 
                 <Route exact path="/shop">
                   <ShopPage/>
@@ -98,6 +96,10 @@ class App extends React.Component{
                   <SignInSignUp />
                  )}
                  />
+
+                <Route path="/">
+                  <HomePage/>
+                </Route>
             </Switch>
           </div>
       </Router>   
